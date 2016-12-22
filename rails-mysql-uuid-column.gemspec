@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "rails-mysql-uuid-column"
   spec.version       = Rails::Mysql::Uuid::Column::VERSION
   spec.authors       = ["Mathieu Jobin"]
-  spec.email         = ["mathieu@venuenext.com"]
+  spec.email         = ["mathieu@justbudget.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
