@@ -25,4 +25,10 @@ describe Rails::Mysql::Uuid::Column do
     expect(TestUuid.columns_hash['uuid'].limit).to eq(16)
     expect(TestUuid.columns_hash['uuid'].type).to eq(:binary)
   end
+
+  it "accept uuid as string for input and returns back uuid as a string on read" do
+    uuid = SecureRandom.uuid
+    test_subject = TestUuid.create!(uuid: uuid)
+    expect(test_subject.uuid).to eq(uuid)
+  end
 end
