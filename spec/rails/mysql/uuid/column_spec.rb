@@ -1,13 +1,14 @@
 require "spec_helper"
-require 'active_record'
+
+class TestUuid < ActiveRecord::Base
+end
 
 describe Rails::Mysql::Uuid::Column do
   it "has a version number" do
     expect(Rails::Mysql::Uuid::Column::VERSION).not_to be nil
   end
 
-  it "allow migrations to have uuid column" do
-
+  before do
     env = ENV['RAILS_ENV'] || 'test'
 
     ActiveRecord::Base.configurations = YAML.load_file('spec/support/config_database.yml')
@@ -17,9 +18,11 @@ describe Rails::Mysql::Uuid::Column do
 
     # like rake db:schema:load
     load 'spec/support/db_schema.rb'
+  end
 
-    class TestUuid < ActiveRecord::Base; end
-
-    expect(TestUuid.uuid).to eq(true)
+  it "allow migrations to have uuid column" do
+    expect(TestUuid.columns_hash['uuid'].sql_type).to eq("varbinary(16)")
+    expect(TestUuid.columns_hash['uuid'].limit).to eq(16)
+    expect(TestUuid.columns_hash['uuid'].type).to eq(:binary)
   end
 end
