@@ -1,6 +1,16 @@
-require "rails/mysql/uuid/column/version"
+require "active_record-mysql-uuid_column/version"
 require 'active_record'
 
+module ActiveModel
+  module Type
+    class Uuid
+      def method_missing(name)
+        debugger
+        puts "whatever"
+      end
+    end
+  end
+end
 module ActiveRecord
   module ConnectionAdapters
     module MySQL
@@ -12,15 +22,7 @@ module ActiveRecord
         end
       end
     end
+
   end
 end
 
-module Rails
-  module Mysql
-    module Uuid
-      module Column
-        # Your code goes here...
-      end
-    end
-  end
-end

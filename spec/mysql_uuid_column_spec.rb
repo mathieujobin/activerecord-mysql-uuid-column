@@ -1,11 +1,13 @@
 require "spec_helper"
+require 'byebug'
+require 'looksee'
 
 class TestUuid < ActiveRecord::Base
 end
 
-describe Rails::Mysql::Uuid::Column do
+describe ActiveRecord::Mysql::UuidColumn do
   it "has a version number" do
-    expect(Rails::Mysql::Uuid::Column::VERSION).not_to be nil
+    expect(ActiveRecord::Mysql::UuidColumn::VERSION).not_to be nil
   end
 
   before do
@@ -29,6 +31,7 @@ describe Rails::Mysql::Uuid::Column do
   it "accept uuid as string for input and returns back uuid as a string on read" do
     uuid = SecureRandom.uuid
     test_subject = TestUuid.create!(uuid: uuid)
+    test_subject.reload
     expect(test_subject.uuid).to eq(uuid)
   end
 end

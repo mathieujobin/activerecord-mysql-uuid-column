@@ -1,15 +1,14 @@
-# Rails::Mysql::Uuid::Column
+# ActiveRecord::Mysql::UuidColumn
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rails/mysql/uuid/column`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Adds a :uuid column to ActiveRecord MySQL Adapter
+it is stored in a 16 bytes binary column. which is exactly the space it needs.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails-mysql-uuid-column'
+gem 'activerecord-mysql-uuid-column'
 ```
 
 And then execute:
@@ -18,11 +17,31 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rails-mysql-uuid-column
+    $ gem install activerecord-mysql-uuid-column
 
 ## Usage
 
-TODO: Write usage instructions here
+# Regular MySQL ActiveRecord config
+```
+test:
+  adapter: mysql2
+  username: root
+  host: localhost
+  reconnect: true
+  database: uuid_test
+```
+
+Adds column type `uuid`
+
+```
+ActiveRecord::Schema.define(version: 20161122225732) do
+  create_table "test_uuids", force: true do |t|
+    t.uuid     "uuid"
+  end
+end
+```
+
+Then use as regular string column, except that it will be stored in a 16 bytes binary column.
 
 ## Development
 
@@ -32,5 +51,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails-mysql-uuid-column. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mathieujobin/activerecord-mysql-uuid-column. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
