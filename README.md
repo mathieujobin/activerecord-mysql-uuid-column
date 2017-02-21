@@ -28,15 +28,15 @@ test:
   username: root
   host: localhost
   reconnect: true
-  database: uuid_test
+  database: awesome_project_of_yours
 ```
 
 Adds column type `uuid`
 
 ```
 ActiveRecord::Schema.define(version: 20161122225732) do
-  create_table "test_uuids", force: true do |t|
-    t.uuid     "uuid"
+  create_table "workers", force: true do |t|
+    t.uuid     "job_uuid"
   end
 end
 ```
