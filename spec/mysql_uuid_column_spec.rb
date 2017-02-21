@@ -1,8 +1,7 @@
 require "spec_helper"
-require 'byebug'
-require 'looksee'
 
 class TestUuid < ActiveRecord::Base
+  attribute :uuid, :uuid
 end
 
 describe ActiveRecord::Mysql::UuidColumn do

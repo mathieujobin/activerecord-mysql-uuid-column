@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "byebug", '~> 0'
   spec.add_development_dependency "looksee", '~> 0'
-  spec.add_dependency "activerecord", ">= 4.2.5", "< 6"
-  spec.add_dependency "mysql2", "~> 0.4.0"
+  spec.add_dependency "activerecord", ">= 5", "< 6"
+  spec.add_dependency "mysql2", "~> 0.4.4"
 end

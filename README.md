@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20161122225732) do
 end
 ```
 
+Define it in your model
+
+```
+class Worker < ActiveRecord::Base
+  attribute :job_uuid, :uuid
+end
+```
+
 Then use as regular string column, except that it will be stored in a 16 bytes binary column.
 
 ## Development
