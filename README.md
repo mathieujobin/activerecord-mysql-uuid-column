@@ -6,6 +6,7 @@ it is stored in a 16 bytes binary column. which is exactly the space it needs.
 [![Gem Version](https://badge.fury.io/rb/activerecord-mysql-uuid-column.svg)](https://badge.fury.io/rb/activerecord-mysql-uuid-column)
 [![Build Status](https://travis-ci.org/mathieujobin/activerecord-mysql-uuid-column.svg?branch=master)](https://travis-ci.org/mathieujobin/activerecord-mysql-uuid-column)
 ![GitHub release](https://img.shields.io/github/release/mathieujobin/activerecord-mysql-uuid-column.svg)
+[![Codecov](https://img.shields.io/codecov/c/github/mathieujobin/activerecord-mysql-uuid-column.svg)](https://codecov.io/gh/mathieujobin/activerecord-mysql-uuid-column)
 
 ## Installation
 
