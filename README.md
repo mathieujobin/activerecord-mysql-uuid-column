@@ -3,6 +3,10 @@
 Adds a :uuid column to ActiveRecord MySQL Adapter
 it is stored in a 16 bytes binary column. which is exactly the space it needs.
 
+[![Gem Version](https://badge.fury.io/rb/activerecord-mysql-uuid-column.svg)](https://badge.fury.io/rb/activerecord-mysql-uuid-column)
+[![Build Status](https://travis-ci.org/mathieujobin/activerecord-mysql-uuid-column.svg?branch=master)](https://travis-ci.org/mathieujobin/activerecord-mysql-uuid-column)
+![GitHub release](https://img.shields.io/github/release/mathieujobin/activerecord-mysql-uuid-column.svg)
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -61,6 +65,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mathieujobin/activerecord-mysql-uuid-column. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## Online API Doc
+http://www.rubydoc.info/gems/activerecord-mysql-uuid-column/0.1.0
+
+## On libraries.io
+https://libraries.io/rubygems/activerecord-mysql-uuid-column
 
 ## License
 
