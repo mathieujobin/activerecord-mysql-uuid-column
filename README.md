@@ -1,6 +1,6 @@
 # ActiveRecord::Mysql::UuidColumn
 
-Adds a :uuid column to ActiveRecord MySQL Adapter
+Adds a :uuid column to ActiveRecord MySQL2 Adapter
 it is stored in a 16 bytes binary column. which is exactly the space it needs.
 
 [![Gem Version](https://badge.fury.io/rb/activerecord-mysql-uuid-column.svg)](https://badge.fury.io/rb/activerecord-mysql-uuid-column)

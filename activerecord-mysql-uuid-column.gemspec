@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mathieu Jobin"]
   spec.email         = ["mathieu@justbudget.com"]
 
-  spec.summary       = %q{This gem add support for a real uuid column for MySQL adapter.}
-  spec.description   = %q{Most people use varchar(36) for storing uuids, which is very wrong for storing a 128 bit integer.}
+  spec.summary       = %q{Adds a :uuid column to ActiveRecord MySQL2 Adapter. Store UUIDs as 16 bytes binary column.}
+  spec.description   = spec.summary
   spec.homepage      = "https://github.com/mathieujobin/activerecord-mysql-uuid-column"
   spec.license       = "MIT"
 
