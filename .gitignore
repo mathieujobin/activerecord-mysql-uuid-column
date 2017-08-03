@@ -8,3 +8,4 @@
 /spec/reports/
 /tmp/
 activerecord-mysql-uuid-column-*.gem
+/.idea/
