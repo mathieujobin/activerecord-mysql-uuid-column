@@ -67,7 +67,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mathieujobin/activerecord-mysql-uuid-column. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Online API Doc
-* http://www.rubydoc.info/gems/activerecord-mysql-uuid-column/0.1.0
+* http://www.rubydoc.info/gems/activerecord-mysql-uuid-column/0.2.0
 
 ## On libraries.io
 * https://libraries.io/rubygems/activerecord-mysql-uuid-column
