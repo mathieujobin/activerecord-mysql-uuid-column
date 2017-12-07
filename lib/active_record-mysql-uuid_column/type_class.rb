@@ -30,7 +30,7 @@ module ActiveRecord
       def assert_valid_value(value)
         case value.class
         when String, ActiveSupport::ToJsonWithActiveSupportEncoder
-          if value.downcase.gsub(/[^a-f0-9]/, '').size == 32
+          if value.to_s.downcase.gsub(/[^a-f0-9]/, '').size == 32
             value
           else
             raise SerializationTypeMismatch,
