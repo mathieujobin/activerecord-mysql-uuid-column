@@ -30,11 +30,11 @@ module ActiveRecord
       def assert_valid_value(value)
         case value.class
         when String, ActiveSupport::ToJsonWithActiveSupportEncoder
-          if value.to_s.downcase.gsub(/[^a-f0-9]/, '').size == 32
+          if value.blank? || value.to_s.downcase.gsub(/[^a-f0-9]/, '').size == 32
             value
           else
             raise SerializationTypeMismatch,
-              "Invalid String uuid #{value}."
+              "Invalid String uuid '#{value}'"
           end
         else
           raise SerializationTypeMismatch,
@@ -48,6 +48,7 @@ module ActiveRecord
         end
 
         def self.from_uuid_string(uuid)
+          return nil if uuid.nil?
           new(uuid, uuid.downcase.gsub(/[^a-f0-9]/, ''))
         end
 
