@@ -2,8 +2,27 @@ sudo: false
 cache: bundler
 language: ruby
 rvm:
-  - 2.2.6
-  - 2.3.3
-  - 2.4.0
+  - 2.2.10
+  - 2.3.8
+  - 2.4.5
+  - 2.5.3
   - ruby-head
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+    - gemfile: gemfiles/Gemfile.rails-4.2.x # Unsupported
+    - gemfile: gemfiles/Gemfile.rails-edge  # Unsupported
+  exclude:
+    - rvm: 2.2.10
+      gemfile: gemfiles/Gemfile.rails-edge
+    - rvm: 2.3.8
+      gemfile: gemfiles/Gemfile.rails-edge
+
 before_install: gem install bundler
+gemfile:
+  - gemfiles/Gemfile.rails-4.2.x
+  - gemfiles/Gemfile.rails-5.0.x
+  - gemfiles/Gemfile.rails-5.1.x
+  - gemfiles/Gemfile.rails-5.2.x
+  - gemfiles/Gemfile.rails-edge
