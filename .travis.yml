@@ -2,8 +2,14 @@ sudo: false
 cache: bundler
 language: ruby
 rvm:
-  - 2.2.6
-  - 2.3.3
-  - 2.4.0
+  - 2.2.10
+  - 2.3.8
+  - 2.4.5
+  - 2.5.3
   - ruby-head
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+
 before_install: gem install bundler
