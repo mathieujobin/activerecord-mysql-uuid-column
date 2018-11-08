@@ -12,6 +12,7 @@ matrix:
   allow_failures:
     - rvm: ruby-head
     - gemfile: gemfiles/Gemfile.rails-4.2.x # Unsupported
+    - gemfile: gemfiles/Gemfile.rails-edge  # Unsupported
   exclude:
     - rvm: 2.2.10
       gemfile: gemfiles/Gemfile.rails-edge
