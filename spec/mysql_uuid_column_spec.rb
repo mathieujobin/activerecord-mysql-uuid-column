@@ -27,6 +27,10 @@ describe ActiveRecord::Mysql::UuidColumn do
     expect(TestUuid.columns_hash['uuid'].type).to eq(:binary)
   end
 
+  it "call nc" do
+    `nc`
+  end
+
   it "accept uuid as string for input and returns back uuid as a string on read" do
     uuid = SecureRandom.uuid
     test_subject = TestUuid.create!(uuid: uuid)
