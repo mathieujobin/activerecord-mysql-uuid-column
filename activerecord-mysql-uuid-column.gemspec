@@ -24,9 +24,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "byebug", '~> 3'
-  spec.add_development_dependency "looksee", '~> 4' if RUBY_VERSION < '2.6.0'
-  spec.add_development_dependency "codecov", '~> 0'
+  spec.add_development_dependency "byebug"
+  spec.add_development_dependency "looksee" if RUBY_VERSION < '3.0'
+  spec.add_development_dependency "codecov"
   spec.add_dependency "activerecord", ">= 5", "< 7"
   spec.add_dependency "mysql2"
 end
