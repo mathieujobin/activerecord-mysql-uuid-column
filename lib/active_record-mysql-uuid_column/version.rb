@@ -3,7 +3,7 @@
 module ActiveRecord
   module Mysql
     module UuidColumn
-      VERSION = '0.3.0'
+      VERSION = '0.3.5'
     end
   end
 end
