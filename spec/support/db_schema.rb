@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveRecord::Schema.define(version: 20161122225732) do
   create_table "test_uuids", force: true do |t|
     t.datetime "released_at"
