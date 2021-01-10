@@ -16,9 +16,10 @@ module ActiveRecord
 
       # from user input (string) to database
       def cast(value)
-        if value.is_a?(Data)
+        case value
+        when Data
           value
-        elsif value.is_a?(ActiveSupport::ToJsonWithActiveSupportEncoder) || value.is_a?(String)
+        when ActiveSupport::ToJsonWithActiveSupportEncoder, String
           Data.from_uuid_string(super)
         else
           raise ArgumentError, "Unsupported input data of class type #{value.class}"

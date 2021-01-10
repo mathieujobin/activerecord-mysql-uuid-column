@@ -46,3 +46,7 @@ gemfile:
   - gemfiles/Gemfile.rails-6.0.x
   - gemfiles/Gemfile.rails-6.1.x
   - gemfiles/Gemfile.rails-edge
+
+script:
+  - bundle exec rspec
+  - if [ $TRAVIS_RUBY_VERSION != 2.3 ]; then bundle exec rubocop; fi
