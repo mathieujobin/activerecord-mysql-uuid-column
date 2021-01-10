@@ -8,6 +8,7 @@ module ActiveRecord
       # from database binary(16) to string
       def deserialize(value)
         return nil if value.nil?
+
         Data.from_database(value)
       end
 
@@ -15,11 +16,10 @@ module ActiveRecord
       def cast(value)
         if value.is_a?(Data)
           value
-        elsif value.is_a?(ActiveSupport::ToJsonWithActiveSupportEncoder) or value.is_a?(String)
+        elsif value.is_a?(ActiveSupport::ToJsonWithActiveSupportEncoder) || value.is_a?(String)
           Data.from_uuid_string(super)
         else
-          raise ArgumentError,
-            "Unsupported input data of class type #{value.class}"
+          raise ArgumentError, "Unsupported input data of class type #{value.class}"
         end
       end
 
@@ -33,22 +33,22 @@ module ActiveRecord
           if value.blank? || value.to_s.downcase.gsub(/[^a-f0-9]/, '').size == 32
             value
           else
-            raise SerializationTypeMismatch,
-              "Invalid String uuid '#{value}'"
+            raise SerializationTypeMismatch, "Invalid String uuid '#{value}'"
           end
         else
-          raise SerializationTypeMismatch,
-            "Unsupported value object of type #{value.class}."
+          raise SerializationTypeMismatch, "Unsupported value object of type #{value.class}."
         end
       end
 
       class Data
         def initialize(display_format, storage_format)
-          @display_format, @storage_format = display_format, storage_format
+          @display_format = display_format
+          @storage_format = storage_format
         end
 
         def self.from_uuid_string(uuid)
           return nil if uuid.nil?
+
           new(uuid, uuid.downcase.gsub(/[^a-f0-9]/, ''))
         end
 
@@ -65,7 +65,7 @@ module ActiveRecord
         def to_s
           @display_format
         end
-        alias_method :to_str, :to_s
+        alias to_str to_s
 
         def hex
           @storage_format
@@ -75,7 +75,6 @@ module ActiveRecord
           other == to_s || super
         end
       end
-
     end
   end
 end

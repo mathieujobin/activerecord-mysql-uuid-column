@@ -4,7 +4,7 @@ module ActiveRecord
       private
 
       def _quote(value)
-        if value.is_a?(Type::Uuid::Data) or value.is_a?(Type::Binary::Data)
+        if value.is_a?(Type::Uuid::Data) || value.is_a?(Type::Binary::Data)
           "x'#{value.hex}'"
         else
           super
