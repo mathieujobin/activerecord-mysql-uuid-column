@@ -1,0 +1,18 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - gemfiles/vendor/bundle/**/*
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/NumericLiterals:
+  Exclude:
+    - spec/support/db_schema.rb
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - it

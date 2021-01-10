@@ -1,5 +1,6 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'active_record-mysql-uuid_column/version'
 
@@ -9,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mathieu Jobin"]
   spec.email         = ["mathieu@justbudget.com"]
 
-  spec.summary       = %q{Adds a :uuid column to ActiveRecord MySQL2 Adapter. Store UUIDs as 16 bytes binary column.}
+  spec.summary       = 'Adds a :uuid column to ActiveRecord MySQL2 Adapter. Store UUIDs as 16 bytes binary column.'
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/mathieujobin/activerecord-mysql-uuid-column"
   spec.license       = "MIT"
@@ -23,11 +24,12 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = "~> 2.3"
 
   spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "byebug"
-  spec.add_development_dependency "looksee" if RUBY_VERSION < '3.0'
   spec.add_development_dependency "codecov"
+  spec.add_development_dependency "looksee" if RUBY_VERSION < '3.0'
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rubocop"
   spec.add_dependency "activerecord", ">= 5", "< 7"
   spec.add_dependency "mysql2"
 end
