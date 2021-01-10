@@ -1,28 +1,48 @@
-sudo: false
+os: linux
+dist: xenial
 cache: bundler
 language: ruby
+services:
+  - mysql
 rvm:
-  - 2.2.10
-  - 2.3.8
-  - 2.4.5
-  - 2.5.3
+  - 2.3
+  - 2.4
+  - 2.5
+  - 2.6
+  - 2.7
+  - 3.0
   - ruby-head
 
-matrix:
+jobs:
   allow_failures:
+    - rvm: 3.0
     - rvm: ruby-head
-    - gemfile: gemfiles/Gemfile.rails-4.2.x # Unsupported
     - gemfile: gemfiles/Gemfile.rails-edge  # Unsupported
   exclude:
-    - rvm: 2.2.10
+    - rvm: 3.0
+      gemfile: gemfiles/Gemfile.rails-5.0.x # Unsupported
+    - rvm: 3.0
+      gemfile: gemfiles/Gemfile.rails-5.1.x # Unsupported
+    - rvm: 3.0
+      gemfile: gemfiles/Gemfile.rails-6.0.x # Unsupported
+    - rvm: 2.4
+      gemfile: gemfiles/Gemfile.rails-6.0.x # Unsupported
+    - rvm: 2.4
+      gemfile: gemfiles/Gemfile.rails-6.1.x # Unsupported
+    - rvm: 2.4
       gemfile: gemfiles/Gemfile.rails-edge
-    - rvm: 2.3.8
+    - rvm: 2.3
+      gemfile: gemfiles/Gemfile.rails-6.0.x # Unsupported
+    - rvm: 2.3
+      gemfile: gemfiles/Gemfile.rails-6.1.x # Unsupported
+    - rvm: 2.3
       gemfile: gemfiles/Gemfile.rails-edge
 
 before_install: gem install bundler
 gemfile:
-  - gemfiles/Gemfile.rails-4.2.x
   - gemfiles/Gemfile.rails-5.0.x
   - gemfiles/Gemfile.rails-5.1.x
   - gemfiles/Gemfile.rails-5.2.x
+  - gemfiles/Gemfile.rails-6.0.x
+  - gemfiles/Gemfile.rails-6.1.x
   - gemfiles/Gemfile.rails-edge
