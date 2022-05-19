@@ -49,9 +49,9 @@ jobs:
       run: sudo systemctl start mysql.service
     - name: Rspec test suite
       run: bundle exec rspec
-    - name: Kill panolint rubocop file in vendor folder. (breaks rubocop)
-      run:  rm vendor/bundle/ruby/3.1.0/gems/docile-1.4.0/.rubocop.yml
+    - name: Kill panolint and other rubocop files found in vendor folder. (breaks rubocop)
+      run:  find vendor/bundle -name .rubocop.yml | xargs rm
       if: matrix.gemfile == 'rails-7.0.x' && matrix.ruby == '3.1'
     - name: Rubocop
-      run: bundle exec rubocop
+      run: bundle exec rubocop lib spec
       if: matrix.gemfile == 'rails-7.0.x' && matrix.ruby == '3.1'

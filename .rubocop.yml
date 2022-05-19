@@ -11,6 +11,9 @@ AllCops:
   Exclude:
     - gemfiles/vendor/bundle/**/*
 
+Style/HashSyntax:
+  Enabled: false
+
 Style/StringLiterals:
   Enabled: false
 
