@@ -30,6 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop"
-  spec.add_dependency "activerecord", ">= 5", "< 7"
+  spec.add_development_dependency "rubocop-performance"
+  spec.add_development_dependency "rubocop-rails"
+  spec.add_dependency "activerecord", ">= 5", "< 8"
   spec.add_dependency "mysql2"
 end

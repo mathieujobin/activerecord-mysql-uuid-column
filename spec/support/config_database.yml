@@ -1,7 +1,10 @@
 test:
   adapter: mysql2
   username: root
+  password: root
   host: localhost
   reconnect: true
   database: uuid_test
+  encoding: utf8mb4
+  collation: utf8mb4_bin
 

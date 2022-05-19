@@ -2,6 +2,9 @@
 
 require "spec_helper"
 
+ActiveRecord::Base.configurations = YAML.load_file('spec/support/config_database.yml')
+ActiveRecord::Base.establish_connection :test
+
 class TestUuid < ActiveRecord::Base
   attribute :uuid, :uuid
 end
@@ -13,8 +16,6 @@ describe ActiveRecord::Mysql::UuidColumn do
 
   before do
     env = ENV['RAILS_ENV'] || 'test'
-
-    ActiveRecord::Base.configurations = YAML.load_file('spec/support/config_database.yml')
 
     # create the current database (test), like rake db:create
     ActiveRecord::Tasks::DatabaseTasks.create_current(env)
